@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# This is the regular expression for a conventional commit message.
+# Example: feat(user): add login functionality
+regex='^(feat|fix|docs|style|refactor|perf|test|chore|build)(\([a-z0-9-]+\))?: .+'
+
+commit_msg=$(cat "$1")
+if [[ ! "$commit_msg" =~ $regex ]]; then
+  echo "ERROR: Commit message does not follow the Conventional Commits format!"
+  echo "Please use one of the following types: feat, fix, docs, style, refactor, perf, test, chore, build."
+  echo "Example commit: feat(user): add login functionality"
+  exit 1
+fi
+
