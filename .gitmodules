@@ -1,0 +1,3 @@
+[submodule "mmr-docs"]
+	path = mmr-docs
+	url = https://github.com/Vinay206/mmr-docs.git
